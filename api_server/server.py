@@ -12,7 +12,8 @@ class Receipt(BaseModel):
     products: list
     total_price: float
 
-producer = KafkaProducer(bootstrap_servers=['localhost:9092'], value_serializer=lambda v: json.dumps(v).encode('utf-8'))
+#producer = KafkaProducer(bootstrap_servers=['localhost:9092'], value_serializer=lambda v: json.dumps(v).encode('utf-8'))
+producer = KafkaProducer(bootstrap_servers=['kafka:9092'], value_serializer=lambda v: json.dumps(v).encode('utf-8'))
 
 @app.post("/receipts")
 async def receive_receipt(receipt: Receipt):
