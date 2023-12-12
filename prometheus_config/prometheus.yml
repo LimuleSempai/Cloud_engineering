@@ -1,0 +1,26 @@
+global:
+  scrape_interval: 15s  # Set the scrape interval to every 15 seconds.
+  evaluation_interval: 15s  # Evaluate rules every 15 seconds.
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'api_server'
+    static_configs:
+      - targets: ['api_server:8000']  # Assumes API server exposes metrics at port 8000
+
+  - job_name: 'admin_server'
+    static_configs:
+      - targets: ['admin_server:8001']  # Assumes Admin server exposes metrics at port 8001
+
+  - job_name: 'mongodb'
+    static_configs:
+      - targets: ['mongodb:27017']  # Assumes MongoDB exposes metrics at default port
+
+  - job_name: 'kafka'
+    static_configs:
+      - targets: ['kafka:9092']  # Assumes Kafka exposes metrics at default port
+
+  # Additional scrape configurations for other services can be added here
