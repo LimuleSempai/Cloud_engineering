@@ -16,6 +16,38 @@ This project implements a cloud-based architecture for handling and processing d
 
 ## Project Structure
 
+```python
+project_root/
+│
+├── api_server/
+│ ├── Dockerfile
+│ ├── server.py
+│ └── requirements.txt
+│
+├── admin_server/
+│ ├── Dockerfile
+│ ├── admin.py
+│ └── requirements.txt
+│
+├── ticket_generator/
+│ ├── ticket_generator.py
+│ └── requirements.txt
+│
+├── kafka_consumer/
+│ ├── kafka_consumer.py
+│ └── requirements.txt
+│
+├── k8s_configs/
+│ ├── deployments/
+│ ├── services/
+│ └── volumes/
+│
+├── prometheus_config/
+│ └── prometheus.yml
+│
+└── docker-compose.yaml
+```
+
 ## Setup and Installation
 
 ### Prerequisites
